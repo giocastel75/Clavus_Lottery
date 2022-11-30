@@ -45,7 +45,8 @@ contract Clavus_Lottery {
      function enter() public payable {
            //verifica che sia stato pagato almeno 0.1 ether
            require (msg.value >= 0.1 ether );
-           players.push(payable(msg.sender));  //inserisce in Players l'indizzo di chi ha mandato fondi allo MSart Contract
+            //inserisce in Players l'indizzo di chi ha mandato fondi allo MSart Contract
+           players.push(payable(msg.sender)); 
     }
     function GetRandomNumber () public view returns(uint){
         return uint (keccak256(abi.encodePacked(owner,block.timestamp)));
